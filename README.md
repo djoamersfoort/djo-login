@@ -6,6 +6,7 @@ You can find the scopes at [LedenAdministratie](https://github.com/djoamersfoort
 
 ## Example
 
+Express
 ```javascript
 const express = require('express')
 const login = require('@djoamersfoort/djo-login-js')
@@ -23,6 +24,27 @@ app.get('/', djo.requireLogin, (req, res) => {
 app.get('/callback', djo.callback)
 
 app.listen(3000)
+```
+
+Socket.io
+```javascript
+const express = require('express')
+const socket = require('socket.io')
+const login = require('@djoamersfoort/djo-login-js')
+
+const djo = new login(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, SCOPES)
+const app = express()
+const server = app.listen(3000)
+const io = socket(server)
+io.use(djo.socketSession)
+
+io.on('connection', socket => {
+    socket.on('isSignedIn', () => {
+        if (typeof socket.request.session.user === 'undefined') return
+        
+        socket.emit('name', socket.request.session.djo.firstName)
+    })
+})
 ```
 
 ## Installation

@@ -30,6 +30,7 @@ class login {
     })
   }
 
+  socketSession = (socket, next) => this.session(socket.request, {}, next)
   authorize_uri (state = '') {
     return this.client.authorizeURL({
       redirect_uri: this.redirect_uri,
