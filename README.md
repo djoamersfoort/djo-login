@@ -8,7 +8,7 @@ You can find the scopes at [LedenAdministratie](https://github.com/djoamersfoort
 
 ```javascript
 const express = require('express')
-const login = require('djoamersfoort/djo-login-js')
+const login = require('@djoamersfoort/djo-login-js')
 
 const djo = new login(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, SCOPES)
 const app = express()
