@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "express-session": "^1.17.3",
-    "simple-oauth2": "^4.3.0"
+    "simple-oauth2": "^5.0.0"
   }
 }

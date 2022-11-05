@@ -21,7 +21,8 @@ class login {
                 "tokenHost": "https://leden.djoamersfoort.nl",
                 "tokenPath": "/o/token/"
             },
-            "client": {id, secret}
+            "client": {id, secret},
+            "http": {"redirects": 5}
         })
     }
 
