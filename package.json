@@ -6,7 +6,7 @@
   "author": "sverben",
   "license": "MIT",
   "dependencies": {
-    "express-session": "^1.17.3",
+    "express-session": "^1.18.1",
     "simple-oauth2": "^5.0.0"
   }
 }
